@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://c27hl8w102hu5"]
+
+[ext_resource type="Script" uid="uid://4v2gcsxq5vm1" path="res://camera_3d.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://d3j0mpyd2mob8" path="res://mesh_instance_3d.gd" id="2_0xm2m"]
+
+[sub_resource type="TextMesh" id="TextMesh_h2yge"]
+text = "Hello World"
+font_size = 127
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+ground_bottom_color = Color(0.37477, 0.3236336, 0.26618484, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1bvp3"]
+lifetime_randomness = 0.5
+initial_velocity_min = 6.0
+initial_velocity_max = 6.0
+color = Color(0.21176471, 0.5372549, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+shading_mode = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_0xm2m"]
+material = SubResource("StandardMaterial3D_ig7tw")
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0xm2m"]
+initial_velocity_min = 1.5
+initial_velocity_max = 1.5
+color = Color(0.5686275, 0.6313726, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_h2yge"]
+size = Vector2(0.05, 0.1)
+
+[node name="Main" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.80055285, -0.57185745, -0.17914927, 0.466038, 0.7820432, -0.41378433, 0.376728, 0.2477658, 0.892574, 1.215832, -1.0583184, 3.8190045)
+light_color = Color(1, 0.6627451, 0.6392157, 1)
+shadow_enabled = true
+shadow_blur = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.322243)
+script = ExtResource("1_ig7tw")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+billboard = 1
+text = "Hello World"
+font_size = 128
+outline_size = 10
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TextMesh_h2yge")
+script = ExtResource("2_0xm2m")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
+
+[node name="Confetti" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 150
+process_material = SubResource("ParticleProcessMaterial_1bvp3")
+draw_pass_1 = SubResource("QuadMesh_0xm2m")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Floor" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -2, 0)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="Floor2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(9.999999, 0, 0, 0, -4.3711385e-08, -10, 0, 0.99999994, -4.371139e-07, 0, -2, -9.863636)
+mesh = SubResource("PlaneMesh_0xm2m")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="StaticBody3D"]
+emitting = false
+amount = 150
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_0xm2m")
+draw_pass_1 = SubResource("QuadMesh_h2yge")
