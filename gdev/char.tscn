@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkcfklkfyie0s"]
+
+[ext_resource type="Script" uid="uid://8mj8pt3aai8t" path="res://area_3d.gd" id="1_3bvsw"]
+[ext_resource type="Script" uid="uid://djhlw2doccgps" path="res://player.gd" id="1_njpxk"]
+[ext_resource type="Script" uid="uid://c764cymqhf2qt" path="res://charcam.gd" id="2_hs5vj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3bvsw"]
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hs5vj"]
+emission = Color(0.8352941, 0.48235294, 0.41568628, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_hs5vj"]
+material = SubResource("StandardMaterial3D_hs5vj")
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hs5vj"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3bvsw"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_ncbi3"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4phwq"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="Environment" id="Environment_3bvsw"]
+background_mode = 1
+background_color = Color(0.60253596, 0.7850048, 0.95059985, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("target_destination")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35198587, 0.8670112, 1.783632)
+script = ExtResource("1_3bvsw")
+target_destination = NodePath("../Area3D2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_3bvsw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("BoxMesh_hs5vj")
+skeleton = NodePath("")
+
+[node name="Area3D2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Area3D2"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D2/StaticBody3D"]
+mesh = SubResource("BoxMesh_hs5vj")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_3bvsw")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D2"]
+shape = SubResource("BoxShape3D_3bvsw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.8350592, 0.55016017, 0, -0.55016017, 0.8350592, -0.43939972, 4.556686, 6.395254)
+light_color = Color(0.7585701, 0.66802144, 0.7008256, 1)
+light_energy = 1.21
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_njpxk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+shape = SubResource("CapsuleShape3D_hs5vj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
+mesh = SubResource("CapsuleMesh_3bvsw")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+fov = 65.0
+script = ExtResource("2_hs5vj")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_ncbi3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_4phwq")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="healthbar" type="ProgressBar" parent="UI"]
+offset_right = 400.0
+offset_bottom = 30.0
+value = 100.0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+custom_minimum_size = Vector2(0.1, 0.1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.27752772, 0.27752772, 0.27752772, 0.3647059)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3bvsw")

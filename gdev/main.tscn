@@ -44,6 +44,7 @@ color = Color(0.5686275, 0.6313726, 1, 1)
 size = Vector2(0.05, 0.1)
 
 [node name="Main" type="Node3D"]
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.80055285, -0.57185745, -0.17914927, 0.466038, 0.7820432, -0.41378433, 0.376728, 0.2477658, 0.892574, 1.215832, -1.0583184, 3.8190045)
