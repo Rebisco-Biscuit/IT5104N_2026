@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://cl3fptmdp3mjg" path="res://huhay.gd" id="4_4phwq"]
 [ext_resource type="Script" uid="uid://ca1r1nx2vhcl2" path="res://wall_trap.gd" id="4_ncbi3"]
 [ext_resource type="Script" uid="uid://b7n3imj2outjp" path="res://level_2_trigger.gd" id="5_4phwq"]
-[ext_resource type="Script" uid="uid://bcebi5eg1mt2n" path="res://l2.gd" id="6_b5duy"]
 [ext_resource type="Script" uid="uid://1m0w7s4gaj7d" path="res://b_2l_1.gd" id="6_qxri4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3bvsw"]
@@ -69,11 +68,8 @@ size = Vector3(2, 0.2, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_yumlf"]
 size = Vector3(2, 0.2, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ri1o5"]
-size = Vector3(2, 0.2, 2)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_dq1vm"]
-size = Vector3(2, 1, 2)
+size = Vector3(2, 1, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1015498338]
 
@@ -331,14 +327,6 @@ mesh = SubResource("BoxMesh_ri1o5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -5)
 shape = SubResource("BoxShape3D_yumlf")
 
-[node name="Area3D" type="Area3D" parent="LavaFloor/LavaTile" unique_id=1597962145]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("6_b5duy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaFloor/LavaTile/Area3D" unique_id=424379559]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-shape = SubResource("BoxShape3D_ri1o5")
-
 [node name="LavaTile2" type="Area3D" parent="LavaFloor" unique_id=1883352926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -5)
 
@@ -349,14 +337,6 @@ mesh = SubResource("BoxMesh_ri1o5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LavaFloor/LavaTile2" unique_id=1753897651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -5)
 shape = SubResource("BoxShape3D_yumlf")
-
-[node name="Area3D" type="Area3D" parent="LavaFloor/LavaTile2" unique_id=1256451319]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("6_b5duy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaFloor/LavaTile2/Area3D" unique_id=1944797044]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-shape = SubResource("BoxShape3D_ri1o5")
 
 [node name="LavaTile3" type="Area3D" parent="LavaFloor" unique_id=569223881]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -10)
@@ -369,14 +349,6 @@ mesh = SubResource("BoxMesh_ri1o5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -5)
 shape = SubResource("BoxShape3D_yumlf")
 
-[node name="Area3D" type="Area3D" parent="LavaFloor/LavaTile3" unique_id=1839404077]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("6_b5duy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaFloor/LavaTile3/Area3D" unique_id=272373621]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-shape = SubResource("BoxShape3D_ri1o5")
-
 [node name="LavaTile4" type="Area3D" parent="LavaFloor" unique_id=590522364]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -15)
 
@@ -387,14 +359,6 @@ mesh = SubResource("BoxMesh_ri1o5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LavaFloor/LavaTile4" unique_id=76347424]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -5)
 shape = SubResource("BoxShape3D_yumlf")
-
-[node name="Area3D" type="Area3D" parent="LavaFloor/LavaTile4" unique_id=924294475]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("6_b5duy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaFloor/LavaTile4/Area3D" unique_id=528079110]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-shape = SubResource("BoxShape3D_ri1o5")
 
 [node name="LavaTile5" type="Area3D" parent="LavaFloor" unique_id=776341003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -20)
@@ -407,16 +371,8 @@ mesh = SubResource("BoxMesh_ri1o5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -5)
 shape = SubResource("BoxShape3D_yumlf")
 
-[node name="Area3D" type="Area3D" parent="LavaFloor/LavaTile5" unique_id=2016360154]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-script = ExtResource("6_b5duy")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="LavaFloor/LavaTile5/Area3D" unique_id=1679852967]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-shape = SubResource("BoxShape3D_ri1o5")
-
 [node name="B2L1" type="Area3D" parent="." unique_id=490841842]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -29)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -29.5)
 script = ExtResource("6_qxri4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="B2L1" unique_id=1878173467]

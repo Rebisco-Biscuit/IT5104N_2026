@@ -19,7 +19,7 @@ var spawn_point: Vector3
 var highest_y: float = 0.0
 var was_in_air: bool = false
 
-@onready var health_bar = get_node("/root/Node3D/UI/HealthBar") # Update this path!
+@onready var health_bar = get_node("/root/Node3D/UI/healthbar") # Update this path!
 
 func _ready():
 	spawn_point = global_position
@@ -99,6 +99,13 @@ func update_ui():
 
 func respawn():
 	global_position = spawn_point
+	velocity = Vector3.ZERO
+	current_health = max_health
+	update_ui()
+	print("Respawned!")
+
+func respawn2():
+	global_position = Vector3(-30, 2, 0)
 	velocity = Vector3.ZERO
 	current_health = max_health
 	update_ui()
