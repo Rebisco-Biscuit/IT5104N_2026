@@ -19,3 +19,12 @@ Level Design
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/251fcc9f-aaec-4502-9b71-7a3c63d5d808" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/dea13e17-9f0a-400d-bb0e-cf67e29e42f0" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7709b1bc-687b-4678-9d81-f2cbf956e06b" />
+
+
+### Week 3.1
+Game SFX
+<img width="331" height="289" alt="image" src="https://github.com/user-attachments/assets/b07260df-bf1e-437d-bad6-d63b1939ad1c" />
+
+### Week 3.2
+Enemy
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1576974-5787-44f9-9df4-8b1ff6720e45" />
