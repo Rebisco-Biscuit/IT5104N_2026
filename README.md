@@ -30,11 +30,11 @@ Enemy
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1576974-5787-44f9-9df4-8b1ff6720e45" />
 
 ### Week 4.1
-Basics & Optimization
+Basics & Optimization </br>
 [x] Skipped, refer to the images attached above.
 
 ### Week 4.2
-Multiplayer
+Multiplayer </br>
 [x] Local
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ac117ef4-a777-4f42-b24f-739a7d74c213" />
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/497ba8ec-de4d-42d8-86fa-25236a73967a" />
