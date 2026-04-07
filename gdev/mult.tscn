@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://74lhu1di04qa"]
+
+[ext_resource type="Script" uid="uid://djfssfr2t4hwu" path="res://player_blue.gd" id="1_gx703"]
+[ext_resource type="Script" uid="uid://i1u83665x8vw" path="res://player_red.gd" id="2_b8xi6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8xi6"]
+size = Vector2(16, 32)
+
+[sub_resource type="Gradient" id="Gradient_li0gv"]
+offsets = PackedFloat32Array(0, 0.3192771, 0.56626505, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.57228917, 0.57228917, 0.57228917, 1, 0.6506024, 0.6506024, 0.6506024, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l48gj"]
+gradient = SubResource("Gradient_li0gv")
+width = 16
+height = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4w30"]
+size = Vector2(16, 32)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mvnkp"]
+size = Vector2(16, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmbbw"]
+size = Vector2(1000, 40)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_3pop1"]
+size = Vector2(1000, 40)
+
+[node name="Node2D" type="Node2D" unique_id=1056892252]
+
+[node name="PlayerBlue" type="CharacterBody2D" parent="." unique_id=1204772840]
+position = Vector2(400, 450)
+script = ExtResource("1_gx703")
+left_action = "p1_left"
+right_action = "p1_right"
+jump_action = "p1_jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerBlue" unique_id=617823998]
+shape = SubResource("RectangleShape2D_b8xi6")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerBlue" unique_id=384188536]
+texture = SubResource("GradientTexture2D_l48gj")
+
+[node name="PlayerRed" type="CharacterBody2D" parent="." unique_id=1940656895]
+position = Vector2(500, 450)
+script = ExtResource("2_b8xi6")
+left_action = "p2_left"
+right_action = "p2_right"
+jump_action = "p2_jump"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerRed" unique_id=601929979]
+shape = SubResource("RectangleShape2D_u4w30")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerRed" unique_id=822174279]
+texture = SubResource("PlaceholderTexture2D_mvnkp")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1867380291]
+position = Vector2(600, 500)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=290519681]
+shape = SubResource("RectangleShape2D_pmbbw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1722534859]
+texture = SubResource("PlaceholderTexture2D_3pop1")
