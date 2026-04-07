@@ -28,3 +28,16 @@ Game SFX
 ### Week 3.2
 Enemy
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1576974-5787-44f9-9df4-8b1ff6720e45" />
+
+### Week 4.1
+Basics & Optimization
+[x] Skipped, refer to the images attached above.
+
+### Week 4.2
+Multiplayer
+[x] Local
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ac117ef4-a777-4f42-b24f-739a7d74c213" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/497ba8ec-de4d-42d8-86fa-25236a73967a" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/405e596e-06fb-487d-bd35-16c608b1ae4c" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7d7ca43b-91d7-4012-b7cc-9eb56557a63d" />
+
